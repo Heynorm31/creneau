@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Créneau" />
+    <link rel="apple-touch-icon" href="./icone.png" />
+    <title>Créneau</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="stage">
+        <canvas id="c"></canvas>
+
+        <div id="hud">
+          <div id="stats">Contacts 0 · 0:00</div>
+          <div id="gears" aria-label="Sélecteur de vitesse">
+            <button type="button" data-g="R">R</button>
+            <button type="button" data-g="N" class="on">N</button>
+            <button type="button" data-g="1">1</button>
+          </div>
+        </div>
+
+        <div id="toast" aria-live="polite"><span></span></div>
+
+        <div id="msg" role="dialog" aria-modal="false">
+          <h2>Créneau</h2>
+          <p>
+            Collez-vous à la voiture devant, passez en R puis reculez dans la place en braquant.
+            Enfoncez l'embrayage pour changer de vitesse, relâchez-le doucement pour avancer.
+          </p>
+          <div class="actions">
+            <button id="again" type="button">Commencer</button>
+            <button id="helpBtn" class="secondary" type="button">Aide</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="dash">
+        <div id="wcol">
+          <svg id="wheel" viewBox="-50 -50 100 100" aria-label="Volant">
+            <g stroke="#cfd3d8" fill="none" stroke-linecap="round">
+              <circle r="40" stroke-width="9" />
+              <path d="M-38 5H-9M38 5H9M0 9V38" stroke-width="7" />
+            </g>
+            <circle r="10" fill="#3a3f48" />
+            <rect x="-3" y="-45" width="6" height="10" rx="2" fill="#ff5a4d" />
+          </svg>
+          <button id="center" type="button">Centrer</button>
+        </div>
+
+        <div id="pedals" aria-label="Pédales">
+          <div class="pedal" id="pc" data-k="c"><span>Embrayage</span></div>
+          <div class="pedal" id="pb" data-k="b"><span>Frein</span></div>
+          <div class="pedal" id="pa" data-k="a"><span>Accélérateur</span></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
